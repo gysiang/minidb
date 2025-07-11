@@ -1,9 +1,8 @@
-##To compile
-c++ -Wall -Wextra -Werror main.cpp -o mini_db
+<strong>To compile</strong></br>
+c++ -Wall -Wextra -Werror main.cpp -o mini_db</br>
 
-##To Test
-./mini_db port_number .save
+<strong>To Test</strong></br>
+./mini_db port_number .save</br>
 
-##In another terminal
-nc localhost port_number | cat -e
-
+<strong>In another terminal</strong></br>
+nc localhost port_number | cat -e</br>
