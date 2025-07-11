@@ -1,0 +1,44 @@
+Create a program named mini_db that takes in two arguments,
+a port and the path of a file.
+
+The database should listen to any client connections at 127.0.0.1
+and should return "ready\n" when the database is ready to handle
+new connections.
+
+The database have a struct that stores a key value pair with no white spaces.
+Each request should be lesser than 1000 characters.
+
+The database should handle multiple commands in a single session
+and should only end when it receives a SIGINT signal.
+
+These are the commands required.
+
+1. POST key, value
+If the write is successful, it should return '0' else '1'
+/**Example**/
+POST A B
+0$
+
+2. GET key
+If successful return '0' else '1'
+/**Example**/
+GET A
+0 B$
+
+3. DELETE key
+If successful return '0' else '1'
+/**Example**/
+DELETE A
+0$
+
+4. UNKNOWN CMD
+2$
+
+When the database receives a SIGINT signal, it should output the contents
+of the key value pairs into the file specified in the argument. If there
+are any key value pairs in this file at the start, it should be saved into
+the database, when the program runs.
+
+You can use netcat to test your code.
+Sample command
+./mini_db 1111 .save & nc localhost 1111 | cat -e
