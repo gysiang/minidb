@@ -138,7 +138,7 @@ int Database::setUpSocket()
 
 	epoll_ctl(_epoll_fd, EPOLL_CTL_ADD, _socket_fd, &ev);
 
-	std::cout << "ready : waiting at port: " << _port << "\n";
+	std::cout << "ready\n";
 	return (0);
 }
 
